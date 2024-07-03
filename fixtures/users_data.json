@@ -1,0 +1,26 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "username": "john_doe",
+            "email": "john@example.com",
+            "phone": "1234567890",
+            "city": "New York",
+            "avatar": "path/to/avatar1.jpg",
+            "password": "pbkdf2_sha256$260000$example$hash"
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "username": "jane_doe",
+            "email": "jane@example.com",
+            "phone": "0987654321",
+            "city": "Los Angeles",
+            "avatar": "path/to/avatar2.jpg",
+            "password": "pbkdf2_sha256$260000$example$hash"
+        }
+    }
+]

@@ -1,0 +1,36 @@
+[
+    {
+        "model": "materials.lesson",
+        "pk": 1,
+        "fields": {
+            "title": "Introduction to Python",
+            "description": "Getting started with Python programming.",
+            "preview": "path/to/lesson_preview1.jpg",
+            "link": "http://example.com/video1",
+            "course": 1
+        }
+    },
+    {
+        "model": "materials.lesson",
+        "pk": 2,
+        "fields": {
+            "title": "Advanced Python",
+            "description": "Deep dive into advanced Python topics.",
+            "preview": "path/to/lesson_preview2.jpg",
+            "link": "http://example.com/video2",
+            "course": 1
+        }
+    },
+    {
+        "model": "materials.lesson",
+        "pk": 3,
+        "fields": {
+            "title": "Django Basics",
+            "description": "Introduction to Django web framework.",
+            "preview": "path/to/lesson_preview3.jpg",
+            "link": "http://example.com/video3",
+            "course": 2
+        }
+    }
+]
+

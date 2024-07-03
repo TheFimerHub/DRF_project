@@ -18,7 +18,7 @@ class Lesson(models.Model):
     description = models.TextField(max_length=555, verbose_name='description')
     preview = models.ImageField(upload_to='previews/', blank=True, null=True, verbose_name='preview')
     link = models.URLField(verbose_name='link')
-    course = models.ForeignKey(Course, related_name='course', on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, related_name='lessons', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
