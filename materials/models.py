@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 class Course(models.Model):
     title = models.CharField(max_length=255, verbose_name='title')
@@ -26,3 +27,11 @@ class Lesson(models.Model):
     class Meta:
         verbose_name = ('Lesson')
         verbose_name_plural = ('Lessons')
+
+
+
+class Subscription(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    course = models.ForeignKey('Course', on_delete=models.CASCADE)
+    class Meta:
+        unique_together = ('user', 'course')

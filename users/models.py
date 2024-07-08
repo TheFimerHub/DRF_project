@@ -23,7 +23,7 @@ class Payment(models.Model):
         ('transfer', 'Transfer to Account'),
     )
 
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='payments')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='payments')
     payment_date = models.DateTimeField(auto_now_add=True)
     paid_course = models.ForeignKey(Course, on_delete=models.CASCADE, blank=True, null=True,
                                     related_name='course_payments')
