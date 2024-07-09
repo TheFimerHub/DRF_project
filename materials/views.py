@@ -5,11 +5,18 @@ from rest_framework.response import Response
 from materials.models import Course, Lesson, Subscription
 from materials.paginator import MyPagination
 from materials.serializers import CourseSerializer, LessonSerializer
+from materials.tasks import send_mail_course_updated
+
 
 class CourseViewSet(viewsets.ModelViewSet):
     pagination_class = MyPagination
     serializer_class = CourseSerializer
     queryset = Course.objects.all().order_by('id')
+
+    def perform_update(self, serializer):
+        course = serializer.save()
+        send_mail_course_updated.delay(course.id)
+
 
 class LessonCreateApiView(generics.CreateAPIView):
     serializer_class = LessonSerializer
