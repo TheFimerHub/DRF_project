@@ -10,6 +10,6 @@ class UsersConfig(AppConfig):
         set_schedule(
             task_name='deactivate_inactive_users',
             task_function='users.tasks.deactivate_inactive_users',
-            every=1,  # Каждую минуту
-            period='minutes',
+            schedule_time={'minute': '*/1'},  # Каждую минуту
         )
+
